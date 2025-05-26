@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <title>Modern Landing Page</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <i class="fas fa-rocket"></i>
+        <span>MyLogo</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="theme-toggle">
+        <i class="fas fa-moon"></i>
+      </div>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1>Welcome to Our <span class="highlight">Modern</span> Platform</h1>
+        <p>
+          Transform your ideas into reality with our cutting-edge solutions.
+        </p>
+        <div class="cta-buttons">
+          <a href="#contact" class="cta-button primary">Get Started</a>
+          <a href="#about" class="cta-button secondary">Learn More</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img
+          src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg"
+          alt="Hero Image"
+        />
+      </div>
+    </section>
+
+    <!-- New Features Section -->
+    <section class="features" id="services">
+      <h2 class="section-title">Our Services</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <i class="fas fa-code"></i>
+          <h3>Web Development</h3>
+          <p>Custom solutions built with latest technologies</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-mobile-alt"></i>
+          <h3>Mobile Apps</h3>
+          <p>Native and cross-platform mobile applications</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-paint-brush"></i>
+          <h3>UI/UX Design</h3>
+          <p>Beautiful and intuitive user interfaces</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- New About Section -->
+    <section class="about" id="about">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>About Us</h2>
+          <p>
+            We are a team of passionate developers and designers creating
+            innovative solutions for the digital world.
+          </p>
+          <ul class="about-features">
+            <li><i class="fas fa-check"></i> Expert Team</li>
+            <li><i class="fas fa-check"></i> Quality Delivery</li>
+            <li><i class="fas fa-check"></i> 24/7 Support</li>
+          </ul>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card">
+            <h3>500+</h3>
+            <p>Projects Completed</p>
+          </div>
+          <div class="stat-card">
+            <h3>100+</h3>
+            <p>Happy Clients</p>
+          </div>
+          <div class="stat-card">
+            <h3>50+</h3>
+            <p>Team Members</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Contact Section -->
+    <section class="contact" id="contact">
+      <h2 class="section-title">Get in Touch</h2>
+      <div class="contact-container">
+        <form class="contact-form">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea placeholder="Your Message" required></textarea>
+          <button type="submit" class="cta-button primary">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; 2025 MyLogo. All rights reserved.</p>
+      </div>
+    </footer>
+    <script>
+      const themeToggle = document.querySelector(".theme-toggle");
+      const themeIcon = themeToggle.querySelector("i");
+
+      // Check for saved theme preference
+      const savedTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+      updateIcon(savedTheme);
+
+      themeToggle.addEventListener("click", () => {
+        const currentTheme =
+          document.documentElement.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+        updateIcon(newTheme);
+      });
+
+      function updateIcon(theme) {
+        themeIcon.className = theme === "light" ? "fas fa-moon" : "fas fa-sun";
+      }
+    </script>
+  </body>
+</html>
