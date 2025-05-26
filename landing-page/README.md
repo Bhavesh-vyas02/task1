@@ -37,7 +37,7 @@ landing-page
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/landing-page.git
+git clonehttps://github.com/Bhavesh-vyas02/task1.git
 ```
 
 2. Navigate to the project directory:
